@@ -1,10 +1,11 @@
 require 'sinatra'
 
-get '/' do
+get '/makers/:name' do
 
-	if params[:nombre] == nil
-     'Hola desconocido'
+	if params[:name] == nil
+    	'Hola desconocido'
 	else
-      "Hola #{params[:nombre]}"
+		name = params[:name]
+    	"Hola " + name.capitalize
 	end
 end
